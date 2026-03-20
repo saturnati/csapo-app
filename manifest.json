@@ -1,13 +1,13 @@
 {
   "name": "Filmes Csapó",
   "short_name": "Csapó",
-  "start_url": "index.html",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Clapperboard.svg/512px-Clapperboard.svg.png",
+      "src": "https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png",
       "sizes": "512x512",
       "type": "image/png"
     }

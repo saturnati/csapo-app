@@ -307,7 +307,7 @@ var app = {
 			window.location = window.location.href; // Újratöltés, hogy betöltse a friss adatokat
 
 		} catch(e) {
-			alert("Hibás QR kód formátum! (Vigyázz a dupla idézőjelekre a JSON-ben)");
+			alert("Hiba történt a dekódoláskor!\n\nRészletek: " + e.message + "\n\nEzt olvasta be a kamera:\n" + decodedText);
 		}
 	}
 };
