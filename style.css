@@ -1,0 +1,215 @@
+body {
+	background-color: #333333;
+	padding: 0;
+	margin: 0;
+	font-family: arial;
+	font-size: 22px;
+	line-height: 28px;
+}
+
+.hidden {
+	display: none!important;
+}
+
+div#main {
+	display: block;
+	position: relative;
+	width: 600px;
+	margin: auto;
+	background-color: #000000;
+	color: #cccccc;
+}
+
+div#main > div#main-inner {
+	display: block;
+	position: relative;
+	padding: 20px;
+}
+
+span#project-title {
+	font-weight: bold;
+}
+
+div#current {
+	display: block;
+	position: relative;
+	text-align: center;
+	margin-top: 40px;
+}
+div#current.inactive > span {
+	color: red;
+	opacity: 0.7;
+}
+div#current span#current-scene {
+	display: block;
+	font-size: 350px;
+	line-height: 350px;
+	margin: -15px -20px;
+	font-family: sans-serif;
+	letter-spacing: -20px;
+	text-indent: -20px;
+}
+div#current span#current-info {
+	display: block;
+	font-size: 50px;
+	line-height: 56px;
+}
+div#current > button {
+	display: none;
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+div#current.inactive > button {
+	display: inline-block;
+}
+
+div#header {
+	display: block;
+	background-color: #000066;
+	margin: -20px;
+	padding: 20px;
+}
+span#footer {
+	display: block;
+	cursor: pointer;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	padding: 20px 0;
+	background-color: #000066;
+}
+
+div#scene-list-box {
+	display: none;
+	position: absolute!important;
+	padding: 20px;
+	width: 460px;
+	bottom: 65px;
+	left: 50px;
+	background-color: rgba(150, 150, 150, 0.5);
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+div#scene-list-box button,
+div#add-scene-box button {
+	padding: 8px 20px;
+	min-width: 180px;
+}
+div#scene-list-box button#reset,
+div#add-scene-box button#custom-scene-cancel {
+	float: right;
+}
+div#scene-list-box > div#scene-list {
+	display: block;
+	position: relative;
+	height: 400px;
+	overflow-y: scroll;
+	border-left: solid 2px #999999;
+	margin-bottom: 15px;
+}
+div#scene-list-box > div#scene-list > div {
+	display: block;
+	position: relative;
+	padding: 12px;
+	margin: 2px 2px;
+	border: solid 1px #ffffff;
+	color: #ffffff;
+	cursor: pointer;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #999999;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+div#scene-list-box > div#scene-list > div.started {
+	color: #00ff0c;
+}
+div#scene-list-box > div#scene-list > div > div.buttons {
+	display: block;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+div#scene-list-box > div#scene-list > div > div.buttons > span {
+	display: inline-block;
+	padding: 0;
+	width: 20px;
+	height: 20px;
+	font-size: 15px;
+	line-height: 20px;
+	margin-left: 10px;
+	text-align: center;
+	background-color: #ffffff;
+	color: #999999;
+}
+div#scene-list-box > div#scene-list > span {
+	display: inline-block;
+	padding: 4px 20px;
+	margin: 6px 0 -5px 10px;
+	font-size: 16px;
+	line-height: 20px;
+	background-color: #000000;
+	color: #ffffff;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+div#add-scene-box {
+	display: none;
+	position: absolute;
+	top: 120px;
+	left: 20px;
+	width: 520px;
+	padding: 20px;
+	background-color: #333333;
+}
+div#add-scene-box label {
+	display: inline-block;
+	width: 100px;
+}
+div#add-scene-box input {
+	padding: 10px;
+	width: 385px;
+}
+
+/* -- QR KÓD OLVASÓ STÍLUSAI (Ide jön a meglévő CSS alá) -- */
+div#qr-modal {
+	position: fixed;
+	top: 0; left: 0; width: 100%; height: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+	z-index: 9999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+div#qr-modal-content {
+	width: 500px;
+	background: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+}
+div#qr-modal-content button#btn-qr-close {
+	margin-top: 20px;
+	padding: 10px 30px;
+	background: #ff0000;
+	color: white;
+	border: none;
+	font-weight: bold;
+	cursor: pointer;
+	font-size: 20px;
+}

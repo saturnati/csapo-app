@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- Kicsit módosított viewport, hogy appként jobban kitöltse a mobil képernyőjét -->
+	<meta name="viewport" content="width=600, user-scalable=no, viewport-fit=cover" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="theme-color" content="#000000">
+	<title>Csapó</title>
+	
+	<!-- PWA Manifest bekötése -->
+	<link rel="manifest" href="manifest.json">
+	
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script src="jquery-3.4.1.js" type="text/javascript"></script>
+	<!-- QR kód olvasó könyvtár -->
+	<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+	<script src="app.js" type="text/javascript"></script>
+</head>
+<body>
+	<div id="main">
+		<div id="main-inner">
+			<div id="header">
+				<!-- Új QR gomb a fejlécben -->
+				<button id="btn-qr-scan" style="float: right; padding: 5px 10px; background: #00ff0c; border: none; font-weight: bold; cursor: pointer;">QR CONFIG</button>
+				<div>Projekt: <span id="project-title">Vár QR kódra...</span></div>
+				<div>Idő: <span id="time">0000.01.01 00:00</span></div>
+			</div>
+			
+			<div id="current" class="hidden">
+				Jelenet:
+				<span id="current-scene"></span>
+				<span id="current-info"></span>
+				<button>START</button>
+			</div>
+		</div>
+		
+		<div id="scene-list-box">
+			<div id="scene-list"></div>
+			<button id="extend-scene">ÚJ JELENET</button>
+			<button id="reset">MINDENT TÖRÖL</button>
+		</div>
+		<span id="footer">JELENETEK</span>
+		
+		<div id="add-scene-box">
+			<div>
+				<label for="custom-scene-chapter">Jelenet:</label>
+				<input type="text" id="custom-scene-chapter" value="" maxlength="4" />
+			</div>
+			<div>
+				<label for="custom-scene-info">Infó:</label>
+				<input type="text" id="custom-scene-info" value="" maxlength="50" />
+			</div>
+			<hr>
+			<button id="custom-scene-save">HOZZÁAD</button>
+			<button id="custom-scene-cancel">MÉGSEM</button>
+		</div>
+	</div>
+
+	<!-- QR Olvasó Felülete (alapból rejtett) -->
+	<div id="qr-modal" class="hidden">
+		<div id="qr-modal-content">
+			<div id="qr-reader" style="width: 100%;"></div>
+			<button id="btn-qr-close">Bezárás</button>
+		</div>
+	</div>
+
+	<!-- Service worker regisztrálása az offline működéshez -->
+	<script>
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('sw.js')
+			.then(() => console.log('Service Worker regisztrálva!'))
+			.catch(err => console.error('Service Worker hiba:', err));
+		}
+	</script>
+</body>
+</html>
