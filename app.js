@@ -21,7 +21,7 @@ var app = {
 			$('span#project-title').html(config.title);
 		}
 		
-		$('div#main').css({'height': $(window).height() + 'px'});
+		//$('div#main').css({'height': $(window).height() + 'px'});
 		this.currentObj = $('div#current');
 		this.timeObj = $('span#time');
 		if ($(this.timeObj).length === 1) {

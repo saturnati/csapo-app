@@ -1,3 +1,10 @@
+html, body {
+	/* Ezzel letiltjuk a böngészős "lefelé húzva frissít" funkciót! */
+	overscroll-behavior-y: none; 
+	height: 100vh; /* Mindig pontosan 100% képernyőmagasság */
+	overflow: hidden; /* Nem engedjük a főoldalt görgetni, csak a listát */
+}
+
 body {
 	background-color: #333333;
 	padding: 0;
@@ -12,9 +19,11 @@ body {
 }
 
 div#main {
-	display: block;
-	position: relative;
-	width: 600px;
+	display: flex;
+	flex-direction: column;
+	width: 100%; /* Mobilra optimalizálva a 600px helyett érdemes 100%-ot adni */
+	max-width: 600px; /* De asztalon ne legyen túl széles */
+	height: 100%; /* Kitölti a teljes magasságot */
 	margin: auto;
 	background-color: #000000;
 	color: #cccccc;
